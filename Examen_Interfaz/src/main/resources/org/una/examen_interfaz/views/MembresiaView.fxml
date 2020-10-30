@@ -10,16 +10,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="446.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="org.una.examen_interfaz.controllers.MembresiaViewController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.MembresiaViewController">
    <children>
       <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="515.0" prefWidth="446.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="lblTitulo" alignment="CENTER" prefHeight="76.0" prefWidth="309.0" text="CREAR MEMBRESIA" />
             <JFXTextField fx:id="txtAño" labelFloat="true" prefHeight="48.0" prefWidth="309.0" promptText="Año/s " />
-            <JFXTextField fx:id="txtMontoTotal" labelFloat="true" prefHeight="48.0" prefWidth="309.0" promptText="Monto total" />
-            <JFXComboBox fx:id="cbx" labelFloat="true" prefHeight="28.0" prefWidth="306.0" promptText="Periodo de pago" />
-            <JFXTextField fx:id="txtPeriodicidad" editable="false" labelFloat="true" prefHeight="48.0" prefWidth="309.0" promptText="Periodicidad " />
+            <HBox>
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="21.0" text="\$ =" />
+                  <JFXTextField fx:id="txtMontoTotal" labelFloat="true" prefHeight="33.0" prefWidth="406.0" promptText="Monto total" />
+               </children>
+            </HBox>
+            <JFXComboBox fx:id="cbxPeriodo" labelFloat="true" onAction="#onActionMouseClickedPeriodo" prefHeight="28.0" prefWidth="306.0" promptText="Periodo de pago" />
+            <JFXTextField fx:id="txtPeriodicidad" alignment="CENTER" editable="false" labelFloat="true" prefHeight="42.0" prefWidth="328.0" promptText="Periodicidad " />
             <JFXComboBox fx:id="cbxCliente" labelFloat="true" prefHeight="28.0" prefWidth="306.0" promptText="Cliente" />
             <JFXComboBox fx:id="cbxTipoServicio" labelFloat="true" prefHeight="28.0" prefWidth="306.0" promptText="Tipo de servicio" />
             <JFXCheckBox fx:id="chkEstado" selected="true" text="Estado" />

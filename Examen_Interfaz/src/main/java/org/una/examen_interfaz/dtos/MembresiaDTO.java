@@ -32,6 +32,5 @@ public class MembresiaDTO {
     private Date fechaModificacion;
     private ClienteDTO cliente;
     private TipoServicioDTO tipoServicio;
-    private List<CobroPendienteDTO> cobrosPendientes;
     
 }

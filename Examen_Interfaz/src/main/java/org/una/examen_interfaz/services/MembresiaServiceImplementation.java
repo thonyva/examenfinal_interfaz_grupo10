@@ -19,10 +19,12 @@ public class MembresiaServiceImplementation {
     
     public Respuesta CrearMembresia(MembresiaDTO membresia) {
         try{
-            Conexion request = new Conexion("http://localhost:8099/membresias/crear");
+            Conexion request = new Conexion("http://localhost:8099/membresias/");
             request.post(membresia);
+            System.out.println(request.getMensajeRespuesta());
+            System.out.println(membresia);
             if(request.isError()){
-                return new Respuesta(false, request.getError(), "No se puedo crear la membresia: "+request.getMensajeRespuesta());
+                return new Respuesta(false, request.getError(), "No se pudo crear la membresia: "+request.getMensajeRespuesta());
             }
             MembresiaDTO membresiaDto = (MembresiaDTO) request.readEntity(MembresiaDTO.class);
             return new Respuesta(true, "Membresia", membresiaDto);
