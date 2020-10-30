@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="309.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.ClienteViewController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="309.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblTitulo" alignment="CENTER" prefHeight="76.0" prefWidth="309.0" text="CREAR CLIENTE" />
+            <JFXTextField fx:id="txtNombreCompleto" labelFloat="true" prefHeight="48.0" prefWidth="309.0" promptText="Nombre completo" />
+            <JFXTextField fx:id="txtCedula" labelFloat="true" prefHeight="48.0" prefWidth="309.0" promptText="Cedula" />
+            <JFXCheckBox fx:id="chkEstado" selected="true" text="Estado" />
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="289.0" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="btnSalir" onAction="#onActionButtonSalir" text="Salir" />
+                  <JFXButton fx:id="btnGuardar" onAction="#onActionButtonGuardar" text="Guardar" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

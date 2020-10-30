@@ -19,11 +19,11 @@ public class Conexion {
     private Invocation.Builder builder;
     private WebTarget webTarget;
     private Response response;
-    private final String apiUrl = "http://localhost:8888/";
+    private final String apiUrl = "http://localhost:9999/";
 
     public Conexion(String direccion) {
         this.client = ClientBuilder.newClient();
-        this.webTarget = client.target(apiUrl + direccion);
+        this.webTarget = client.target(direccion);
         this.builder = webTarget.request(MediaType.APPLICATION_JSON);
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
         headers.add("Content-Type", "application/json; charset=UTF-8");
@@ -33,7 +33,7 @@ public class Conexion {
 
     public Conexion(String direccion, String parametros, Map<String, Object> valores) {
         this.client = ClientBuilder.newClient();
-        this.webTarget = client.target(apiUrl + direccion).path(parametros).resolveTemplates(valores);
+        this.webTarget = client.target(direccion).path(parametros).resolveTemplates(valores);
         this.builder = webTarget.request(MediaType.APPLICATION_JSON);
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
         headers.add("Content-Type", "application/json; charset=UTF-8");

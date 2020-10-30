@@ -71,7 +71,7 @@ public void InitializarVentana(Stage stage, ResourceBundle idioma,String nombref
     }
 public void goMain() {
         try {
-            this.mainStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("/org/una/aerointerfaz/views/DashboardPrincipalView.fxml"), this.idioma)));
+            this.mainStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("/org/una/examen_interfaz/views/ClienteView.fxml"), this.idioma)));
             this.mainStage.setMinWidth(800);
             this.mainStage.setMinHeight(600);
             this.mainStage.show();
