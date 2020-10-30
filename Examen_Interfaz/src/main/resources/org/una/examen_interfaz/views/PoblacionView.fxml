@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.PoblacionViewController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="153.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="btnProvincia" onAction="#onActionButtonProvincia" prefHeight="21.0" prefWidth="153.0" text="Provincia" />
+            <JFXButton fx:id="btnCanton" onAction="#onActionButtonCanton" prefHeight="22.0" prefWidth="155.0" text="Cantón" />
+            <JFXButton fx:id="btnDistrito" onAction="#onActionButtonDistrito" prefHeight="29.0" prefWidth="150.0" text="Distrito" />
+            <JFXButton fx:id="btnUnidad" onAction="#onActionButtonUnidad" prefHeight="46.0" prefWidth="186.0" text="Unidad" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <Label prefHeight="60.0" prefWidth="684.0" text="BIENVENIDOS AL SISTEMA DE INFORMACION SOBRE EL CENSO TERRITORIAL DE C.R 2020" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
