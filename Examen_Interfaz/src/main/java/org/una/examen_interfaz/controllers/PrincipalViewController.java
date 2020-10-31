@@ -55,6 +55,8 @@ public class PrincipalViewController extends Controller implements Initializable
 
     @FXML
     private void onActionButtonPoblaciones(ActionEvent event) {
+        
+        FlowController.getInstance().goViewInWindow("PoblacionView");
     }
 
     @FXML
