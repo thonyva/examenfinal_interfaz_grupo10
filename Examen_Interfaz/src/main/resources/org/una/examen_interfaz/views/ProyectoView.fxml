@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.ProyectoViewController">
-    
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.ProyectoViewController">
+   <children>
+      <Label layoutX="287.0" layoutY="45.0" text="Proyectos." />
+      <JFXButton fx:id="btnSalir" layoutX="509.0" layoutY="41.0" onAction="#onActionButtonSalir" text="Salir." />
+      <JFXTextField fx:id="txtNombre" layoutX="264.0" layoutY="245.0" prefHeight="25.0" prefWidth="154.0" text="Nombre del proyecto." />
+      <JFXTextField layoutX="264.0" layoutY="312.0" prefHeight="25.0" prefWidth="154.0" text="Porcentaje de avance:" />
+      <JFXButton fx:id="btnGuardar" layoutX="403.0" layoutY="444.0" onAction="#onActionButtonGuardar" text="Guardar." />
+      <JFXButton fx:id="btnRegresar" layoutX="41.0" layoutY="444.0" onAction="#onActionButtonRegresar" text="Regresar." />
+      <JFXButton fx:id="btnLimpiar" layoutX="465.0" layoutY="444.0" onAction="#onActionButtonLimpiar" text="Limpiar." />
+      <JFXButton fx:id="btnEliminar" layoutX="521.0" layoutY="444.0" onAction="#onActionButtonEliminar" text="Eliminar." />
+      <ImageView fitHeight="100.0" fitWidth="172.0" layoutX="47.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXTreeView layoutX="47.0" layoutY="140.0" prefHeight="285.0" prefWidth="172.0" />
+   </children>
 </AnchorPane>
