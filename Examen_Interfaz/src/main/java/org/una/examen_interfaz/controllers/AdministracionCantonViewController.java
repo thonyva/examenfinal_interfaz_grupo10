@@ -6,28 +6,28 @@
 package org.una.examen_interfaz.controllers;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import org.una.examen_interfaz.utils.FlowController;
 
 /**
  * FXML Controller class
  *
  * @author erikg
  */
-public class PoblacionViewController extends Controller implements Initializable {
+public class AdministracionCantonViewController extends Controller implements Initializable {
 
     @FXML
-    private JFXButton btnProvincia;
+    private JFXTextField txtId;
     @FXML
-    private JFXButton btnCanton;
+    private JFXButton btnBuscar;
     @FXML
-    private JFXButton btnDistrito;
+    private JFXButton btnActualizar;
     @FXML
-    private JFXButton btnUnidad;
+    private JFXButton btnNuevo;
 
     /**
      * Initializes the controller class.
@@ -38,23 +38,15 @@ public class PoblacionViewController extends Controller implements Initializable
     }    
 
     @FXML
-    private void onActionButtonProvincia(ActionEvent event) {
-         FlowController.getInstance().goView("AdministracionProvinciaView");
+    private void onActionButtonBuscar(ActionEvent event) {
     }
 
     @FXML
-    private void onActionButtonCanton(ActionEvent event) {
-         FlowController.getInstance().goView("AdministracionCantonView");
+    private void onActionButtonActualizar(ActionEvent event) {
     }
 
     @FXML
-    private void onActionButtonDistrito(ActionEvent event) {
-         FlowController.getInstance().goView("AdministracionDistritoView");
-    }
-
-    @FXML
-    private void onActionButtonUnidad(ActionEvent event) {
-         FlowController.getInstance().goView("AdministracionunidadView");
+    private void onActionButtonNuevo(ActionEvent event) {
     }
 
     @Override
