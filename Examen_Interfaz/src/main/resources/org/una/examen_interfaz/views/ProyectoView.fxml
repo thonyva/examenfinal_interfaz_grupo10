@@ -12,7 +12,7 @@
       <Label layoutX="287.0" layoutY="45.0" text="Proyectos." />
       <JFXButton fx:id="btnSalir" layoutX="509.0" layoutY="41.0" onAction="#onActionButtonSalir" text="Salir." />
       <JFXTextField fx:id="txtNombre" layoutX="264.0" layoutY="245.0" prefHeight="25.0" prefWidth="154.0" text="Nombre del proyecto." />
-      <JFXTextField layoutX="264.0" layoutY="312.0" prefHeight="25.0" prefWidth="154.0" text="Porcentaje de avance:" />
+      <JFXTextField fx:id="txtPorcentajeDeAvance" layoutX="264.0" layoutY="312.0" prefHeight="25.0" prefWidth="154.0" text="Porcentaje de avance:" />
       <JFXButton fx:id="btnGuardar" layoutX="403.0" layoutY="444.0" onAction="#onActionButtonGuardar" text="Guardar." />
       <JFXButton fx:id="btnRegresar" layoutX="41.0" layoutY="444.0" onAction="#onActionButtonRegresar" text="Regresar." />
       <JFXButton fx:id="btnLimpiar" layoutX="465.0" layoutY="444.0" onAction="#onActionButtonLimpiar" text="Limpiar." />

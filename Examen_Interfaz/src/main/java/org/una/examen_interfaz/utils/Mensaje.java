@@ -40,4 +40,8 @@ public class Mensaje {
 
         return result.get() == ButtonType.OK;
     }
+
+    public void show(AlertType alertType, String tarea_agregada_con_éxito) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
