@@ -27,4 +27,5 @@ public class TipoServicioDTO {
     private boolean estado; 
     private Date fechaRegistro; 
     private Date fechaModificacion;
+    private List<MembresiaDTO> membresias;
 }

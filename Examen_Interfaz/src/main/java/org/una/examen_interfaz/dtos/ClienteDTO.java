@@ -6,6 +6,7 @@
 package org.una.examen_interfaz.dtos;
 
 import java.util.Date;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,5 +28,6 @@ public class ClienteDTO {
     private boolean estado; 
     private Date fechaRegistro; 
     private Date fechaModificacion;
+    private List<MembresiaDTO> membresias;
     
 }

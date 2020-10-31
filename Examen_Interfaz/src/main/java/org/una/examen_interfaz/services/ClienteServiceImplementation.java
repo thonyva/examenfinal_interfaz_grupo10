@@ -25,7 +25,7 @@ public class ClienteServiceImplementation {
             Conexion request = new Conexion("http://localhost:8099/clientes/");
             request.post(cliente);
             if(request.isError()){
-                return new Respuesta(false, request.getError(), "No se puedo crear el cliente: "+request.getMensajeRespuesta());
+                return new Respuesta(false, request.getError(), "No se pudo crear el cliente: "+request.getMensajeRespuesta());
             
             }
             ClienteDTO clienteDto = (ClienteDTO) request.readEntity(ClienteDTO.class);
@@ -40,7 +40,7 @@ public class ClienteServiceImplementation {
             Conexion request = new Conexion("http://localhost:8099/clientes/");
             request.get();
             if(request.isError()){
-                return new Respuesta(false, request.getError(), "No se puedo obtener los clientes: "+request.getMensajeRespuesta()); 
+                return new Respuesta(false, request.getError(), "No se pudo obtener los clientes: "+request.getMensajeRespuesta()); 
             }
             List<ClienteDTO> clientes = (List<ClienteDTO>) request.readEntity(new GenericType<List<ClienteDTO>>(){});
             return new Respuesta(true, "Clientes", clientes);
@@ -66,7 +66,23 @@ public class ClienteServiceImplementation {
         }
     }
 
+    public Respuesta ActualizarCliente(ClienteDTO cliente,Long id){
+         try{
+            
+            Map<String, Object> parametros = new HashMap<>();
+            parametros.put("id", id);
+            Conexion request = new Conexion("http://localhost:8099/clientes","/{id}",parametros);
+            request.put(cliente);
+            if(request.isError()){
+                return new Respuesta(false, request.getError(), "No se pudo actualizar el cliente: "+request.getMensajeRespuesta()); 
+            }
+            ClienteDTO clienteDto =  (ClienteDTO) request.readEntity(ClienteDTO.class);
+            return new Respuesta(true, "Cliente", clienteDto);
+        }catch(Exception ex){
+            return new Respuesta(false, ex.toString(), "Error al comunicarse con el servidor");
+        }
     
+    }
     
     
 }

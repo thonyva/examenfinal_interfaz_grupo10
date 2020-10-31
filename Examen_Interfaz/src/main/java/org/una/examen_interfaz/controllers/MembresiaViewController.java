@@ -11,6 +11,8 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -25,8 +27,10 @@ import org.una.examen_interfaz.services.MembresiaServiceImplementation;
 import org.una.examen_interfaz.utils.Mensaje;
 import org.una.examen_interfaz.dtos.TipoServicioDTO;
 import org.una.examen_interfaz.dtos.ClienteDTO;
+import org.una.examen_interfaz.dtos.CobroPendienteDTO;
 import org.una.examen_interfaz.dtos.MembresiaDTO;
 import org.una.examen_interfaz.services.ClienteServiceImplementation;
+import org.una.examen_interfaz.services.CobroPendienteServiceImplementation;
 import org.una.examen_interfaz.services.TipoServicioServiceImplementation;
 import org.una.examen_interfaz.utils.Respuesta;
 
@@ -61,6 +65,7 @@ public class MembresiaViewController extends Controller implements Initializable
     private final MembresiaServiceImplementation service = new MembresiaServiceImplementation();
     private final ClienteServiceImplementation serviceCliente = new ClienteServiceImplementation();
     private final TipoServicioServiceImplementation serviceTipoServicio = new TipoServicioServiceImplementation();
+    private final CobroPendienteServiceImplementation cobroService = new CobroPendienteServiceImplementation();
     
     ArrayList<ClienteDTO> clientes = new ArrayList(); 
     ArrayList<TipoServicioDTO> tiposServicios = new ArrayList();
@@ -85,16 +90,22 @@ public class MembresiaViewController extends Controller implements Initializable
         
         if (actionValidated()) {
               MembresiaDTO membresia = new MembresiaDTO();
-              membresia.setTotalMonto(Long.parseLong(txtMontoTotal.getText()));
+              membresia.setTotalMonto(Double.parseDouble(txtMontoTotal.getText()));
               membresia.setTotalAño(Integer.parseInt(txtAño.getText()));
               membresia.setCliente(cbxCliente.getValue());
               membresia.setTipoServicio(cbxTipoServicio.getValue());
               membresia.setPeriodicidad(Integer.parseInt(txtPeriodicidad.getText()));
               membresia.setEstado(chkEstado.isSelected());
-              System.out.println(membresia);
-            Respuesta respuesta = service.CrearMembresia(membresia);
-            if (respuesta.getEstado()) {
+              Respuesta respuesta = service.CrearMembresia(membresia);
+//            System.out.println(respuesta.getMensajeInterno());
+                if (respuesta.getEstado()) {
                 new Mensaje().show(Alert.AlertType.INFORMATION, "Administrando Membresias","Membresia agregada con éxito.");
+              
+//              ClienteDTO cl = new ClienteDTO();
+//              cl = cbxCliente.getValue();
+//              System.out.println(cl +" : "+ membresia);
+//              cl.getMembresias().add(membresia);
+//              serviceCliente.ActualizarCliente(cl,cbxCliente.getValue().getId());
                 limpiarCampos();
                 }else {
                new Mensaje().show(Alert.AlertType.ERROR, "Administrando Membresias", "Error al crear la membresia.");
@@ -138,6 +149,9 @@ public class MembresiaViewController extends Controller implements Initializable
     }
    
    public void limpiarCampos(){
+//       cbxPeriodo.setValue("");
+//       cbxCliente.setValue(null);
+//       cbxTipoServicio.setValue(null);
        txtAño.setText("");
        txtMontoTotal.setText("");
        txtPeriodicidad.setText("");
@@ -189,28 +203,91 @@ public class MembresiaViewController extends Controller implements Initializable
         
        switch(cbxPeriodo.getValue()){
            case "Mensual":
-               txtPeriodicidad.setText("1");
+               txtPeriodicidad.setText("12");
                break;
            case "Bimensual":
-               txtPeriodicidad.setText("2");
-               break;
-           case "Trimestral":
-               txtPeriodicidad.setText("3");
-               break; 
-           case "Cuatrimestral":
-               txtPeriodicidad.setText("4");
-               break;
-           case "Semestral":
                txtPeriodicidad.setText("6");
                break;
+           case "Trimestral":
+               txtPeriodicidad.setText("4");
+               break; 
+           case "Cuatrimestral":
+               txtPeriodicidad.setText("3");
+               break;
+           case "Semestral":
+               txtPeriodicidad.setText("2");
+               break;
            case "Anual":
-               txtPeriodicidad.setText("12");
+               txtPeriodicidad.setText("1");
                break;    
            
        }
         
     }
     
+     private List<CobroPendienteDTO> crearCobro(MembresiaDTO membresia) {
+        final List<CobroPendienteDTO> cs = new ArrayList();
+        for(int i = 0; i<membresia.getPeriodicidad(); i++){
+            CobroPendienteDTO c = new CobroPendienteDTO();
+//            cs.add(c);
+            c.setMonto(membresia.getTotalMonto()/membresia.getPeriodicidad());
+            if(i==0){
+            c.setEstado(false);
+            c.setFechaVencimiento(ValidarFechaVencimiento(membresia.getPeriodicidad(),new Date()));
+            
+            }else{
+            c.setEstado(true);
+            c.setFechaVencimiento(ValidarFechaVencimiento(membresia.getPeriodicidad(),new Date()/*cs.get(i-1).getFechaVencimiento()*/));
+            
+            }
+            
+            c.setMembresia(membresia);
+           
+            
+           Respuesta respuesta = cobroService.CrearCobroPendiente(c);
+          
+            if (respuesta.getEstado()) {
+                cs.add(c);
+                new Mensaje().show(Alert.AlertType.INFORMATION, "Administrando Cobros","Cobro agregado con éxito.");
+                
+                }else {
+               new Mensaje().show(Alert.AlertType.ERROR, "Administrando Cobros", "Error al crear el cobro.");
+            }
+        }
+        
+        return cs;
+    }
+    public Date ValidarFechaVencimiento(int periodicidad,Date fecha){
+        Date nuevaFecha = new Date();
+    switch (periodicidad){
+        case 1:
+            nuevaFecha = GeneraFechaVencimiento(fecha,12);
+            break;
+        case 2:
+            nuevaFecha = GeneraFechaVencimiento(fecha,6);
+            break;
+        case 3:
+            nuevaFecha = GeneraFechaVencimiento(fecha,4);
+            break;
+        case 4:
+            nuevaFecha = GeneraFechaVencimiento(fecha,3);
+            break;
+        case 6:
+            nuevaFecha = GeneraFechaVencimiento(fecha,2);
+            break;
+        case 12:
+            nuevaFecha = GeneraFechaVencimiento(fecha,1);
+        break;
+    }
+    return nuevaFecha;
+    
+    }
+    public Date GeneraFechaVencimiento(Date fecha, int meses){
+      Calendar calendar = Calendar.getInstance();
+      calendar.setTime(fecha); // Configuramos la fecha que se recibe
+      calendar.add(Calendar.MONTH,meses);  // numero de días a añadir, o restar en caso de días<0
+      return calendar.getTime(); // Devuelve el objeto Date con los nuevos días añadidos	
+ }
   
    
     @Override
