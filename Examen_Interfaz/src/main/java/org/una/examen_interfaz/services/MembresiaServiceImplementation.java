@@ -14,7 +14,6 @@ import org.una.examen_interfaz.dtos.MembresiaDTO;
 import org.una.examen_interfaz.utils.Conexion;
 import org.una.examen_interfaz.utils.Mensaje;
 import org.una.examen_interfaz.utils.Respuesta;
-import org.una.examen_interfaz.dtos.CobroPendienteDTO;
 
 /**
  *
@@ -24,8 +23,7 @@ public class MembresiaServiceImplementation {
     
     public Respuesta CrearMembresia(MembresiaDTO membresia) {
         try{
-            Conexion request = new Conexion("http://localhost:8099/membresias//");
-            System.out.println(request.getMensajeRespuesta());
+            Conexion request = new Conexion("http://localhost:8099/membresias/");
             request.post(membresia);
             if(request.isError()){
                 return new Respuesta(false, request.getError(), "No se pudo crear la membresia: "+request.getMensajeRespuesta());

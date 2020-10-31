@@ -22,7 +22,7 @@ import org.una.examen_interfaz.services.CobroPendienteServiceImplementation;
  *
  * @author farle_000
  */
-public class GenerarCobrosViewController implements Initializable {
+public class GenerarCobrosViewController extends Controller implements Initializable {
 
     @FXML
     private TreeView<String> tvTree;
@@ -51,5 +51,10 @@ public class GenerarCobrosViewController implements Initializable {
 //     TreeView<String> tree = new TreeView<String> (rootItem);
         tvTree.setRoot(rootItem);
     }    
+
+    @Override
+    public void initialize() {
+    
+    }
     
 }

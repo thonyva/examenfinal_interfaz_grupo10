@@ -97,7 +97,7 @@ public class MembresiaViewController extends Controller implements Initializable
               membresia.setPeriodicidad(Integer.parseInt(txtPeriodicidad.getText()));
               membresia.setEstado(chkEstado.isSelected());
               Respuesta respuesta = service.CrearMembresia(membresia);
-//            System.out.println(respuesta.getMensajeInterno());
+            System.out.println(respuesta.getMensajeInterno());
                 if (respuesta.getEstado()) {
                 new Mensaje().show(Alert.AlertType.INFORMATION, "Administrando Membresias","Membresia agregada con éxito.");
               

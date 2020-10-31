@@ -71,9 +71,10 @@ public void InitializarVentana(Stage stage, ResourceBundle idioma,String nombref
     }
 public void goMain() {
         try {
-            this.mainStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("/org/una/examen_interfaz/views/MembresiaView.fxml"), this.idioma)));
+            this.mainStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("/org/una/examen_interfaz/views/PrincipalView.fxml"), this.idioma)));
             this.mainStage.setMinWidth(800);
             this.mainStage.setMinHeight(600);
+//            FlowController.getInstance().goView(s);
             this.mainStage.show();
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(FlowController.class.getName()).log(Level.SEVERE, "Error inicializando la vista base.", ex);
@@ -97,19 +98,19 @@ public void goMain() {
         }
         return loader;
     }
-    public void goMain(String nombre) {
-        this.nombre = nombre;
-        try {
-            
-            this.mainStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("views/DashboardPrincipalView.fxml"), this.idioma)));
-            
-            goView(nombre);
-            this.mainStage.show();
-            
-        } catch (IOException ex) {
-            java.util.logging.Logger.getLogger(FlowController.class.getName()).log(Level.SEVERE, "Error inicializando la vista base.", ex);
-        }
-    }
+//    public void goMain(String nombre) {
+//        this.nombre = nombre;
+//        try {
+//            
+//            this.mainStage.setScene(new Scene(FXMLLoader.load(App.class.getResource("views/DashboardPrincipalView.fxml"), this.idioma)));
+//            
+//            goView(nombre);
+//            this.mainStage.show();
+//            
+//        } catch (IOException ex) {
+//            java.util.logging.Logger.getLogger(FlowController.class.getName()).log(Level.SEVERE, "Error inicializando la vista base.", ex);
+//        }
+//    }
     
 
     public void goView(String viewName) {

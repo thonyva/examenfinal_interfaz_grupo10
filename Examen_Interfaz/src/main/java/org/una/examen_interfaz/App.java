@@ -20,7 +20,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         FlowController.getInstance().InitializeFlow(stage, null);
        stage.setTitle("Requerimientos UNA");   
-       FlowController.getInstance().goMain();/*.goViewInWindow("ClienteView");*/
+       FlowController.getInstance().goViewInWindow("InicioView");
     }
 
     public static void main(String[] args) {
