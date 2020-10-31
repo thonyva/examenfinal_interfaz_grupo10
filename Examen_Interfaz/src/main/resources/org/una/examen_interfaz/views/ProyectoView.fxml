@@ -6,23 +6,29 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="645.0" styleClass="fondo" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.ProyectoViewController">
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.ProyectoViewController">
    <children>
-      <JFXButton fx:id="btnSalir" layoutX="509.0" layoutY="41.0" onAction="#onActionButtonSalir" styleClass="botonSalir" text="Salir." />
-      <JFXTextField fx:id="txtNombre" layoutX="264.0" layoutY="272.0" prefHeight="25.0" prefWidth="154.0" styleClass="botonPrincipal" text="Nombre del proyecto." />
-      <JFXTextField fx:id="txtPorcentajeDeAvance" layoutX="264.0" layoutY="332.0" prefHeight="25.0" prefWidth="154.0" styleClass="botonPrincipal" text="Porcentaje de avance:" />
-      <JFXButton fx:id="btnGuardar" layoutX="390.0" layoutY="477.0" onAction="#onActionButtonGuardar" styleClass="boton" text="Guardar." />
-      <JFXButton fx:id="btnRegresar" layoutX="47.0" layoutY="477.0" onAction="#onActionButtonRegresar" styleClass="boton" text="Regresar." />
-      <JFXButton fx:id="btnLimpiar" layoutX="464.0" layoutY="477.0" onAction="#onActionButtonLimpiar" styleClass="boton" text="Limpiar." />
-      <JFXButton fx:id="btnEliminar" layoutX="535.0" layoutY="477.0" onAction="#onActionButtonEliminar" styleClass="boton" text="Eliminar." />
-      <ImageView fitHeight="105.0" fitWidth="175.0" layoutX="47.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
-      <JFXTreeView layoutX="47.0" layoutY="166.0" prefHeight="285.0" prefWidth="172.0" />
-      <Label layoutX="245.0" layoutY="48.0" prefHeight="64.0" prefWidth="145.0" styleClass="titulo" stylesheets="@estilos.css" text="Proyectos.">
-         <font>
-            <Font name="Centaur" size="18.0" />
-         </font>
-      </Label>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="645.0" styleClass="fondo" stylesheets="@estilos.css">
+         <children>
+            <JFXButton fx:id="btnSalir" layoutX="509.0" layoutY="41.0" onAction="#onActionButtonSalir" styleClass="botonSalir" text="Salir." />
+            <JFXTextField fx:id="txtNombre" layoutX="264.0" layoutY="272.0" prefHeight="25.0" prefWidth="154.0" styleClass="botonPrincipal" text="Nombre del proyecto." />
+            <JFXTextField fx:id="txtPorcentajeDeAvance" layoutX="264.0" layoutY="332.0" prefHeight="25.0" prefWidth="154.0" styleClass="botonPrincipal" text="Porcentaje de avance:" />
+            <JFXButton fx:id="btnGuardar" layoutX="390.0" layoutY="477.0" onAction="#onActionButtonGuardar" styleClass="boton" text="Guardar." />
+            <JFXButton fx:id="btnRegresar" layoutX="47.0" layoutY="477.0" onAction="#onActionButtonRegresar" styleClass="boton" text="Regresar." />
+            <JFXButton fx:id="btnLimpiar" layoutX="464.0" layoutY="477.0" onAction="#onActionButtonLimpiar" styleClass="boton" text="Limpiar." />
+            <JFXButton fx:id="btnEliminar" layoutX="535.0" layoutY="477.0" onAction="#onActionButtonEliminar" styleClass="boton" text="Eliminar." />
+            <ImageView fitHeight="105.0" fitWidth="175.0" layoutX="47.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+            <JFXTreeView layoutX="47.0" layoutY="166.0" prefHeight="285.0" prefWidth="172.0" />
+            <Label layoutX="245.0" layoutY="48.0" prefHeight="64.0" prefWidth="145.0" styleClass="titulo" stylesheets="@estilos.css" text="Proyectos.">
+               <font>
+                  <Font name="Centaur" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</VBox>

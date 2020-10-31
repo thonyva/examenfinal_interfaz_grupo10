@@ -6,18 +6,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane prefHeight="463.0" prefWidth="553.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.PrincipalViewController">
+<BorderPane prefHeight="463.0" prefWidth="553.0" styleClass="fondo" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.PrincipalViewController">
    <top>
-      <Label fx:id="lblTitulo" alignment="CENTER" prefHeight="67.0" prefWidth="552.0" text="Exámen Final - Grupo 10" BorderPane.alignment="CENTER" />
+      <Label fx:id="lblTitulo" alignment="CENTER" prefHeight="67.0" prefWidth="552.0" styleClass="textProyecto" text="Exámen Final - Grupo 10" BorderPane.alignment="CENTER" />
    </top>
    <bottom>
       <HBox alignment="CENTER" prefHeight="61.0" prefWidth="553.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <JFXButton fx:id="btnSalir" onAction="#onActionButtonSalir" text="Salir" />
-            <JFXButton fx:id="btnPoblaciones" onAction="#onActionButtonPoblaciones" text="Poblaciones" />
-            <JFXButton fx:id="btnTareas" onAction="#onActionButtonTareas" text="Tareas" />
-            <JFXButton fx:id="btnCobros" onAction="#onActionButtonCobros" text="Cobros" />
+            <JFXButton fx:id="btnPoblaciones" onAction="#onActionButtonPoblaciones" styleClass="botonPrincipal" text="Poblaciones" />
+            <JFXButton fx:id="btnTareas" onAction="#onActionButtonTareas" styleClass="botonPrincipal" text="Tareas" />
+            <JFXButton fx:id="btnCobros" onAction="#onActionButtonCobros" styleClass="botonPrincipal" text="Cobros" />
+            <JFXButton fx:id="btnSalir" onAction="#onActionButtonSalir" styleClass="botonSalir" text="Salir" />
          </children>
       </HBox>
    </bottom>

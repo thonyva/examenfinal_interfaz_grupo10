@@ -61,6 +61,7 @@ public class PrincipalViewController extends Controller implements Initializable
 
     @FXML
     private void onActionButtonTareas(ActionEvent event) {
+        FlowController.getInstance().goViewInWindow("TareaView");
     }
 
     @FXML
