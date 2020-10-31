@@ -39,7 +39,7 @@ public class PoblacionViewController extends Controller implements Initializable
 
     @FXML
     private void onActionButtonProvincia(ActionEvent event) {
-         FlowController.getInstance().goView("AdministracionProvinciaView");
+         FlowController.getInstance().goViewInWindowModal("AdministracionProvinciaView",stage,false);
     }
 
     @FXML

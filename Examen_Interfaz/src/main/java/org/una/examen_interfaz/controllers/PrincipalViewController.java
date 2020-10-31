@@ -56,12 +56,12 @@ public class PrincipalViewController extends Controller implements Initializable
     @FXML
     private void onActionButtonPoblaciones(ActionEvent event) {
         
-        FlowController.getInstance().goViewInWindow("PoblacionView");
+        FlowController.getInstance().goView("PoblacionView");
     }
 
     @FXML
     private void onActionButtonTareas(ActionEvent event) {
-        FlowController.getInstance().goViewInWindow("TareaView");
+        FlowController.getInstance().goView("TareaView");
     }
 
     @FXML
