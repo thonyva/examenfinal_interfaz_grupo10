@@ -6,8 +6,12 @@
 
 package org.una.examen_interfaz.controllers;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -16,14 +20,57 @@ import javafx.fxml.Initializable;
  * @author thony
  */
 
-public class ProyectoViewController implements Initializable {
+public class ProyectoViewController extends Controller implements Initializable {
+    @FXML
+    private JFXButton btnSalir;
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private JFXTextField txtNombre;
+
+    @FXML
+    private JFXButton btnGuardar;
+
+    @FXML
+    private JFXButton btnRegresar;
+
+    @FXML
+    private JFXButton btnLimpiar;
+
+    @FXML
+    private JFXButton btnEliminar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
+    
+    @FXML
+    void onActionButtonEliminar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionButtonGuardar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionButtonLimpiar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionButtonRegresar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onActionButtonSalir(ActionEvent event) {
+
+    }
+
+    @Override
+    public void initialize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.TareaViewController">
-    
+
+<AnchorPane prefHeight="651.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.una.examen_interfaz.controllers.TareaViewController">
+   <children>
+      <Label layoutX="304.0" layoutY="61.0" prefHeight="31.0" prefWidth="60.0" text="Tareas." />
+      <JFXTextField fx:id="txtNombre" layoutX="34.0" layoutY="199.0" prefHeight="25.0" prefWidth="225.0" promptText="Nombre." />
+      <JFXTextField fx:id="txtImportancia" layoutX="34.0" layoutY="278.0" prefHeight="25.0" prefWidth="225.0" text="Importancia." />
+      <JFXTextField fx:id="txtPrioridad" layoutX="34.0" layoutY="341.0" prefHeight="25.0" prefWidth="225.0" text="Prioridad (importancia*urgencia)" />
+      <JFXTextField fx:id="txtDescripcion" layoutX="37.0" layoutY="413.0" prefHeight="49.0" prefWidth="605.0" promptText="Descripción." />
+      <JFXTextField fx:id="txtUrgencia" layoutX="412.0" layoutY="278.0" prefHeight="25.0" prefWidth="225.0" text="Urgencia." />
+      <JFXComboBox fx:id="cbProyecto" layoutX="412.0" layoutY="199.0" prefHeight="25.0" prefWidth="225.0" promptText="Proyecto." />
+      <DatePicker fx:id="dpFechaDeInicio" layoutX="34.0" layoutY="526.0" prefHeight="25.0" prefWidth="225.0" promptText="Fecha de inicio." />
+      <DatePicker fx:id="dpFechaDeFinalizacion" layoutX="452.0" layoutY="526.0" prefHeight="25.0" prefWidth="190.0" promptText="Fecha de finalización." />
+      <JFXButton fx:id="btnCalcular" layoutX="274.0" layoutY="341.0" text="Calcular." />
+      <JFXTextField fx:id="txtPorcentaje" layoutX="412.0" layoutY="341.0" prefHeight="25.0" prefWidth="225.0" text="Porcentaje de avance." />
+      <JFXButton fx:id="btnGuardar" layoutX="463.0" layoutY="606.0" onAction="#onActionButtonGuardar" text="Guardar." />
+      <JFXButton fx:id="btnRegresar" layoutX="37.0" layoutY="618.0" onAction="#onActionButtonRegresar" text="Regresar." />
+      <JFXButton fx:id="btnSalir" layoutX="606.0" layoutY="36.0" text="Salir." />
+      <JFXButton fx:id="btnLimpiar" layoutX="535.0" layoutY="606.0" onAction="#onActionButtonLimpiar" text="Limpiar." />
+      <JFXButton fx:id="btnEliminar" layoutX="597.0" layoutY="606.0" onAction="#onActionButtonEliminar" text="Eliminar." />
+      <ImageView fitHeight="135.0" fitWidth="154.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
 </AnchorPane>
