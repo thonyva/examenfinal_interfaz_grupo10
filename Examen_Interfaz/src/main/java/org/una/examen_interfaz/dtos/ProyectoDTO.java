@@ -27,6 +27,5 @@ public class ProyectoDTO {
     private String nombre;
     private boolean estado;
     private String descripcion;
-    private Date fechaInicio;
-    private Date fechaFinalizacion;
+    private String porcentajeAvance;
 }
