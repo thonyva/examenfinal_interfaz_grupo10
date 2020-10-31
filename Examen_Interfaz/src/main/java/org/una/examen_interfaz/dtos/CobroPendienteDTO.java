@@ -24,10 +24,8 @@ public class CobroPendienteDTO {
     private Long id; 
     private double monto;   
     private boolean estado; 
-    private Date fechaRegistro; 
-    private Date fechaModificacion;
     private Date fechaVencimiento;
-    private Date fechaPago;
+    private Date fechaRegistro;
     
     private MembresiaDTO membresia;
 }
