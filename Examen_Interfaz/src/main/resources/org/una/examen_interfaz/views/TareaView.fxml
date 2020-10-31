@@ -22,8 +22,8 @@
       <DatePicker fx:id="dpFechaDeFinalizacion" layoutX="452.0" layoutY="526.0" prefHeight="25.0" prefWidth="190.0" promptText="Fecha de finalización." />
       <JFXButton fx:id="btnCalcular" layoutX="274.0" layoutY="341.0" text="Calcular." />
       <JFXTextField fx:id="txtPorcentaje" layoutX="412.0" layoutY="341.0" prefHeight="25.0" prefWidth="225.0" text="Porcentaje de avance." />
-      <JFXButton fx:id="btnGuardar" layoutX="463.0" layoutY="606.0" onAction="#onActionButtonGuardar" text="Guardar." />
-      <JFXButton fx:id="btnRegresar" layoutX="37.0" layoutY="618.0" onAction="#onActionButtonRegresar" text="Regresar." />
+      <JFXButton fx:id="btnCrear" layoutX="463.0" layoutY="606.0" onAction="#onActionButtonCrear" text="Guardar." />
+      <JFXButton fx:id="btnRegresar" layoutX="37.0" layoutY="606.0" onAction="#onActionButtonRegresar" text="Regresar." />
       <JFXButton fx:id="btnSalir" layoutX="606.0" layoutY="36.0" text="Salir." />
       <JFXButton fx:id="btnLimpiar" layoutX="535.0" layoutY="606.0" onAction="#onActionButtonLimpiar" text="Limpiar." />
       <JFXButton fx:id="btnEliminar" layoutX="597.0" layoutY="606.0" onAction="#onActionButtonEliminar" text="Eliminar." />

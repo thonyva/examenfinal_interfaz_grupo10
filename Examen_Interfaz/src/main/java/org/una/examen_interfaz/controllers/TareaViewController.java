@@ -9,7 +9,6 @@ package org.una.examen_interfaz.controllers;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTreeView;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -24,6 +23,7 @@ import javafx.scene.control.DatePicker;
  */
 
 public class TareaViewController extends Controller implements Initializable {
+    
     @FXML
     private JFXTextField txtNombre;
 
@@ -55,7 +55,7 @@ public class TareaViewController extends Controller implements Initializable {
     private JFXTextField txtPorcentaje;
 
     @FXML
-    private JFXButton btnGuardar;
+    private JFXButton btnCrear;
 
     @FXML
     private JFXButton btnRegresar;
@@ -80,8 +80,7 @@ public class TareaViewController extends Controller implements Initializable {
     }
 
     @FXML
-    void onActionButtonGuardar(ActionEvent event) {
-
+    void onActionButtonCrear(ActionEvent event) {
     }
 
     @FXML
