@@ -30,6 +30,6 @@
       <JFXButton fx:id="btnSalir" layoutX="590.0" layoutY="41.0" styleClass="botonSalir" text="Salir." />
       <JFXButton fx:id="btnLimpiar" layoutX="535.0" layoutY="606.0" onAction="#onActionButtonLimpiar" styleClass="boton" text="Limpiar." />
       <JFXButton fx:id="btnEliminar" layoutX="597.0" layoutY="606.0" onAction="#onActionButtonEliminar" styleClass="boton" text="Eliminar." />
-      <ImageView fitHeight="135.0" fitWidth="154.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="140.0" fitWidth="190.0" layoutX="33.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
