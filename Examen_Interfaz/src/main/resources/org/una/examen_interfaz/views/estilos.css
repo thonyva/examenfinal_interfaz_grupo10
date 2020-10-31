@@ -1,0 +1,56 @@
+/*
+    To change this license header, choose License Headers in Project Properties.
+    To change this template file, choose Tools | Templates
+    and open the template in the editor.
+*/
+
+/* 
+    Created on : 30 oct 2020, 20:50:05
+    Author     : thony
+*/
+
+.fondo {
+    -fx-background-color: #065535;
+}
+
+.textProyecto {
+    -fx-font: bold 16px "Centaur";
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.titulo {
+    -fx-font: bold 18px "Centaur";
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.boton {
+    -fx-text-fill: white;
+    -fx-font: 16px "Centaur";
+}
+
+.botonPrincipal {
+    -fx-font: bold italic 16px "Centaur";
+    -fx-background-color: #c0d6e4;
+    -fx-text-fill: white;
+    -fx-border-color: #696966;
+    -fx-border-width:  0 0 8 8;
+}
+
+.botonSalir {
+    -fx-text-fill: white;
+    -fx-font: 16px "Centaur";
+    -fx-background-color: red;
+}
+
+.boton:hover {
+    -fx-background-color: #e49d6e;
+    -fx-text-fill: white;
+    -fx-font: bold italic 35px "Centaur";
+    -fx-border-width:  2 2 6 6;
+}

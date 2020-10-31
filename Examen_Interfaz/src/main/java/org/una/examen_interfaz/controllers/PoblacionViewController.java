@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import org.una.examen_interfaz.utils.FlowController;
 
 /**
  * FXML Controller class
@@ -38,18 +39,22 @@ public class PoblacionViewController implements Initializable {
 
     @FXML
     private void onActionButtonProvincia(ActionEvent event) {
+         FlowController.getInstance().goView("RegistrarProvinciaView");
     }
 
     @FXML
     private void onActionButtonCanton(ActionEvent event) {
+         FlowController.getInstance().goView("RegistrarCantonView");
     }
 
     @FXML
     private void onActionButtonDistrito(ActionEvent event) {
+         FlowController.getInstance().goView("RegistrarDistritoView");
     }
 
     @FXML
     private void onActionButtonUnidad(ActionEvent event) {
+         FlowController.getInstance().goView("RegistrarunidadView");
     }
     
 }
